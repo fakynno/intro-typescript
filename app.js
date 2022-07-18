@@ -3,10 +3,11 @@ let button = document.getElementById('button');
 let input1 = document.getElementById('input1');
 let input2 = document.getElementById('input2');
 function somaNumero(numero1, numero2, deveImprimir, frase) {
+    let soma = numero1 + numero2;
     if (deveImprimir) {
-        console.log(numero1 + numero2);
+        console.log(frase + soma);
     }
-    return numero1 + numero2;
+    return soma;
 }
 let deveImprimir = true;
 let frase = 'O resultado é: ';

@@ -4,10 +4,11 @@ let input2 = document.getElementById('input2') as HTMLInputElement;
 
 
 function somaNumero(numero1: number, numero2: number, deveImprimir: boolean, frase: string) {
+    let soma = numero1 + numero2;
     if (deveImprimir) {
-        console.log(numero1 + numero2);        
+        console.log(frase + soma);        
     }
-    return numero1 + numero2;
+    return soma;
 }
 
 let deveImprimir = true;
