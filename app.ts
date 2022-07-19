@@ -1,23 +1,66 @@
-let button = document.getElementById('button');
-let input1 = document.getElementById('input1') as HTMLInputElement;
-let input2 = document.getElementById('input2') as HTMLInputElement;
+const pessoa = {
+    nome: 'Fabio',
+    idade: 39,
+    profissao: 'desenvolvedor'
+}
 
+pessoa.idade = 33;
 
-function somaNumero(numero1: number, numero2: number, deveImprimir: boolean, frase: string) {
-    let soma = numero1 + numero2;
-    if (deveImprimir) {
-        console.log(frase + soma);        
+const novaPessoa: {nome: string, idade: number, profissao: string} = {
+    nome: 'fabricio',
+    idade: 12,
+    profissao: 'pedreiro'
+}
+
+const outraPessoa: {nome: string, idade: number, profissao: string} = {
+    nome: 'Mauricio',
+    idade: 26,
+    profissao: 'Desenvolvedor'
+}
+
+interface Pessoa {
+    nome: string,
+    idade: number,
+    profissao?: Profissao
+}
+
+interface Estudante extends Pessoa {
+    materias: string[]
+}
+
+enum Profissao {
+    Desenvolvedor,
+    Atriz,
+    Professor,
+    Pedreiro
+}
+
+const pessoaInterface: Pessoa = {
+    nome: 'Jose',
+    idade: 35,
+    profissao: Profissao.Pedreiro
+}
+
+const novoEstudante: Estudante = {
+    nome: 'Luigi',
+    idade: 13,
+    profissao: Profissao.Professor,
+    materias: ['Português', 'Inglês', 'Programação', 'Ciências', 'História']
+}
+
+const outroEstudante: Estudante = {
+    nome: 'Gabriel',
+    idade: 16,    
+    materias: ['Inglês','Português']
+}
+
+console.log('lista de matérias: ');
+
+function listar(lista: string[]) {
+    for (let item of lista) {
+        console.log(' - ', item);
+        
     }
-    return soma;
 }
 
-let deveImprimir = true;
-let frase = 'O resultado é: ';
-
-if(button) {
-    button.addEventListener('click', () => {
-        if (input1 && input2) {
-            console.log(somaNumero(Number(input1.value), Number(input2.value), deveImprimir, frase));
-        }
-    })
-}
+listar(novoEstudante.materias);
