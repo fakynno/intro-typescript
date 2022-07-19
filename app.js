@@ -21,3 +21,6 @@ function soma(valor1, valor2) {
 soma(100, 13);
 soma('eu sou ', 'voce');
 soma('Oi ', 80);
+function novaSoma(valor1, valor2) {
+    return valor1 + valor2;
+}

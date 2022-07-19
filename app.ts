@@ -24,3 +24,7 @@ function soma(valor1: entrada, valor2: entrada) {
 soma(100,13);
 soma('eu sou ','voce');
 soma('Oi ',80);
+
+function novaSoma(valor1: number, valor2: number): number {    
+        return valor1 + valor2;    
+}
