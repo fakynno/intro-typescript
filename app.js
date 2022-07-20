@@ -1,12 +1,17 @@
 "use strict";
-function mostraValores(valor1, valor2) {
-    console.log(valor1 + valor2);
+let anyIsBack;
+anyIsBack = 12;
+anyIsBack = 'ola';
+anyIsBack = true;
+let stringTeste = 'checa palavra';
+stringTeste = anyIsBack;
+let valorUnknown;
+valorUnknown = 125;
+valorUnknown = 'oie';
+valorUnknown = true;
+valorUnknown = 'so vai';
+let stringTeste2 = 'valor de variável';
+// stringTeste2 = valorUnknown;
+if (typeof valorUnknown === 'string') {
+    stringTeste2 = valorUnknown;
 }
-function somarValoresETratar(numero1, numero2, callback) {
-    let resultado = numero1 + numero2;
-    return callback(resultado);
-}
-function aoQuadrado(numero) {
-    return numero * numero;
-}
-console.log(somarValoresETratar(10, 12, aoQuadrado));
