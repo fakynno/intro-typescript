@@ -1,17 +1,33 @@
 "use strict";
-let anyIsBack;
-anyIsBack = 12;
-anyIsBack = 'ola';
-anyIsBack = true;
-let stringTeste = 'checa palavra';
-stringTeste = anyIsBack;
-let valorUnknown;
-valorUnknown = 125;
-valorUnknown = 'oie';
-valorUnknown = true;
-valorUnknown = 'so vai';
-let stringTeste2 = 'valor de variável';
-// stringTeste2 = valorUnknown;
-if (typeof valorUnknown === 'string') {
-    stringTeste2 = valorUnknown;
+Object.defineProperty(exports, "__esModule", { value: true });
+let botaoAtualizar = document.getElementById('atualizar-saldo');
+let botaoLimpar = document.getElementById('limpar-saldo');
+let soma = document.getElementById('soma');
+let campoSaldo = document.getElementById('campo-saldo');
+let saldoTotal = 0;
+limparSaldo();
+function somarAoSaldo(soma) {
+    if (campoSaldo) {
+        saldoTotal += soma;
+        campoSaldo.innerHTML = saldoTotal.toString();
+        limparCampoSoma();
+    }
 }
+function limparCampoSoma() {
+    soma.value = "";
+}
+function limparSaldo() {
+    if (campoSaldo) {
+        saldoTotal = 0;
+        campoSaldo.innerHTML = saldoTotal.toString();
+    }
+}
+if (botaoAtualizar) {
+    botaoAtualizar.addEventListener('click', () => {
+        somarAoSaldo(Number(soma.value));
+        console.log('chegou aqui');
+    });
+}
+botaoLimpar.addEventListener('click', () => {
+    limparSaldo();
+});
